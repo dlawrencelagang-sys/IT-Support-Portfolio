@@ -75,7 +75,7 @@ Pointed the client's DNS to the domain controller's IP, then joined the client t
 ![Folder permissions](images/19-folder-permissions.png)
 ![Mapped drive - access granted](images/20-mapped-drive-access.png)
 
-### Scenario 6: Group Policy - desktop wallpaper (optional)
+### Scenario 6: Group Policy - Desktop wallpaper
 - **Goal:** Push a standard desktop wallpaper to domain clients using Group Policy.
 - **Resolution:** Created a GPO with the wallpaper setting and linked it to the domain/OU, then confirmed it applied on the client.
 
