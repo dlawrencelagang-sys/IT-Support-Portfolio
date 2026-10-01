@@ -46,12 +46,14 @@ Assigned a Microsoft 365 Business Premium license to Tony Stark.
 
 ### Scenario 3: Shared mailbox
 - **Problem:** IT team needs a shared inbox to receive and respond to support requests.
-- **Resolution:** Created a shared mailbox (IT Support) and added Tony as a member.
+- **Resolution:** Created a shared mailbox (IT Support) and added Tony as a member, then confirmed Tony could actually access it from Outlook.
 
 ![Shared mailbox creation form](images/13-sharedmailbox-create-form.png)
 ![Shared mailbox created](images/14-sharedmailbox-created.png)
 ![Adding members to the mailbox](images/15-sharedmailbox-add-members.png)
 ![Shared mailbox members list](images/16-sharedmailbox-members-list.png)
+![Tony opens the shared mailbox](images/sharedmailbox-tony-opens.png)
+![Viewing the shared mailbox inbox](images/sharedmailbox-inbox-view.png)
 
 ### Scenario 4: Group management
 - **Problem:** Each department needs its own group for access and communication.
