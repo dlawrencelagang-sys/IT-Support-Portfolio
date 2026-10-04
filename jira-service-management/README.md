@@ -20,8 +20,6 @@ Added the fictional users as Customers so they could be set as ticket reporters,
 
 ![Ticket creation form](images/02-ticket-creation-form.png)
 
-Note: the ticket for Tony Stark's password reset was categorized under "Request admin access" instead of "Password Reset," since the default Password Reset request type didn't include a description field needed to capture the full request.
-
 ### 3. Setting priority
 Set a priority on each ticket based on business impact (not just how the requester described it), following standard ITSM practice where the support team finalizes priority rather than the requester.
 
