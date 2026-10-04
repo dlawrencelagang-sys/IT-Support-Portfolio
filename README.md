@@ -7,8 +7,8 @@ Hi, I'm Denns Lawrence Lagang, a BSIT student building hands-on skills for IT Su
 | Lab | What I practiced |
 |-----|------------------|
 | [Active Directory](./active-directory) | Domain controller setup, OUs, user accounts, password resets, account unlocks, groups, joining a PC to the domain |
-| [Action1 Patch Management](./action1-patch-management) | Agent deployment from the domain controller, missing update deployment, vulnerability review |
 | [Microsoft 365 Admin](./microsoft365-admin) | User licensing, shared mailboxes, group management, MFA resets |
+| [Action1 Patch Management](./action1-patch-management) | Agent deployment from the domain controller, missing update deployment, vulnerability review |
 | [Jira Service Management](./jira-service-management) | Mock helpdesk queue, ticket categorization, priorities/SLAs, resolving tickets with notes |
 
 ## Certifications
