@@ -18,4 +18,4 @@ VirtualBox, Windows Server 2022, Windows 11, Microsoft 365 Admin Center, Action1
 ## Contact
 
 - LinkedIn: www.linkedin.com/in/denns-lawrence-lagang-b56056409
-- Email: your.name@gmail.com
+- Email: dlawrence.lagang@gmail.com
