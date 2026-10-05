@@ -1,62 +1,66 @@
 # Action1 Patch Management Lab
 
 ## Objective
-Set up Action1 in a home lab to practice patch management: installing agents, deploying agents automatically across a domain, reviewing vulnerabilities, and deploying missing updates.
+Set up Action1 in a home lab to practice patch management: installing agents, deploying agents across a domain, reviewing vulnerabilities (CVEs), and deploying missing updates with a controlled reboot.
 
 ## Environment
 - Action1 (free tier)
-- Windows Server 2022 domain controller (DL-DC-01, dltech.com)
-- Windows 11 client (Desktop-01, logged in as Bruce Wayne)
+- Windows Server 2022 domain controller (DL-DC-01, domain dltech.com)
+- Windows 11 client (Desktop-01, user Bruce Wayne)
 
 ## Setup
 
 ### 1. Manual agent install on the DC
-Installed the Action1 agent directly on the domain controller.
+Downloaded the Windows agent (.MSI) from the Action1 console and installed it on the domain controller.
 
-![Install agent on DC](images/01-install-agent-dc.png)
-![Agent installed on DC](images/02-agent-installed-dc.png)
+![Action1 console - Install Agent page](images/01-install-agent-dc.png)
+![Agent setup wizard completed on the DC](images/02-agent-installed-dc.png)
 
 ### 2. Agent Deployer
-Set up Action1 Deployer to automatically discover and install the agent on every computer in the domain, instead of installing it manually on each machine.
+Set up the Action1 Deployer, a service that queries Active Directory and automatically deploys the agent to domain computers, so agents don't have to be installed one machine at a time.
 
-![Deployer setup](images/03-deployer-setup.png)
-![Deployer installing](images/04-deployer-install-progress.png)
-![Deployer connected](images/05-deployer-connected.png)
-![Deployment scope settings](images/06-deployer-scope-settings.png)
+![Download and install Deployer step](images/03-deployer-setup.png)
+![Deployer installer running on the DC with a domain service account](images/04-deployer-install-progress.png)
+![Check Status - successfully connected to DL-DC-01.dltech.com](images/05-deployer-connected.png)
+![Deployment Scope settings - all computers in dltech.com, DL-DC-01 excluded](images/06-deployer-scope-settings.png)
 
 ### 3. Client auto-enrollment
-Confirmed the Deployer worked by checking that the Windows 11 client picked up the agent automatically, without installing anything on it by hand.
+I did not install anything by hand on the Windows 11 client. Once the Deployer was running, Desktop-01 appeared in Action1 on its own and the Agent Deployment page showed 2 agents deployed.
 
-![Client auto-enrolled](images/07-client-auto-enrolled.png)
-![Both endpoints visible](images/08-both-endpoints-enrolled.png)
+![Agent Deployment status - Deployer running, 2 agents deployed](images/07-client-auto-enrolled.png)
+![Endpoints list - Desktop-01 and DL-DC-01 both connected](images/08-both-endpoints-enrolled.png)
 
 ## Scenarios Practiced
 
-### Vulnerabilities
-Reviewed the vulnerabilities (CVEs) found on both endpoints.
+### Vulnerability review
+Reviewed the CVEs Action1 found on each endpoint, including CVSS score, whether the CVE is on the CISA KEV list, published date, remediation status, and the vulnerable software.
 
-![Vulnerabilities - client](images/09-vulnerabilities-client.png)
-![Vulnerabilities - DC](images/10-vulnerabilities-dc.png)
+![Vulnerabilities - Desktop-01](images/09-vulnerabilities-client.png)
+![Vulnerabilities - DL-DC-01](images/10-vulnerabilities-dc.png)
 
-### Missing updates - client
-Checked which updates were missing on the client, selected the ones to install, and deployed them.
+### Deploying updates - client (Desktop-01)
+Reviewed the missing updates, selected them, configured the deployment, and scheduled it.
 
-![Missing updates - client](images/11-missing-updates-client.png)
-![Deploy settings - client](images/12-deploy-updates-settings-client.png)
-![Deploy schedule - client](images/13-deploy-schedule-client.png)
-![Downloading updates](images/17-downloading-both.png)
-![Reboot confirmation](images/18-reboot-confirmation.png)
+![Missing updates on Desktop-01 (8 selected)](images/11-missing-updates-client.png)
+![Selected updates and reboot options](images/12-deploy-updates-select-client.png)
+![Schedule - run now, 24-hour completion deadline](images/13-deploy-schedule-client.png)
 
-Confirmed the full cycle worked: missing updates found, selected, deployed, downloaded, and the machine rebooted automatically with a custom maintenance message.
+Reboot options were set to reboot automatically only if required, with a custom message and a 2-minute timeout so logged-on users can save their work.
 
-### Missing updates - DC
-Checked missing updates on the domain controller and deployed them the same way.
+### Deploying updates - domain controller (DL-DC-01)
+Repeated the process on the domain controller with its own set of missing updates.
 
-![Missing updates - DC](images/14-missing-updates-dc.png)
-![Deploy settings - DC](images/15-deploy-updates-settings-dc.png)
-![Deploy schedule - DC](images/16-deploy-schedule-dc.png)
+![Missing updates on DL-DC-01 (4 selected)](images/14-missing-updates-dc.png)
+![Selected updates and reboot options](images/15-deploy-updates-dc-settings.png)
+
+### Monitoring the deployment
+Tracked both deployments in Automation History while they ran, then confirmed the DC deployment finished. The DC then showed the custom reboot message to the logged-in user before restarting.
+
+![Automation History - both deployments running](images/16-downloading-both.png)
+![Automation History - DC deployment completed](images/17-deployment-completed.png)
+![Reboot prompt with custom maintenance message on the DC](images/18-reboot-confirmation.png)
 
 ## What I Learned
-- How to install the Action1 agent both manually and automatically across a whole domain using the Deployer.
-- How to find and review vulnerabilities on managed endpoints.
-- How to find missing updates and deploy them, including setting reboot behavior and a custom message for end users.
+- How to install the Action1 agent manually and how to use the Deployer to roll it out automatically across a domain.
+- How to review vulnerabilities per endpoint and read CVSS scores and CISA KEV flags.
+- How to select missing updates, set reboot behavior with a custom user message, schedule the deployment, and monitor it in Automation History.
