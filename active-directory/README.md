@@ -84,6 +84,6 @@ Pointed the client's DNS to the domain controller's IP, then joined the client t
 
 ## What I Learned
 - How OUs and security groups serve different purposes: OUs organize and apply policy, groups control access.
-- The day-to-day tasks a helpdesk technician handles in Active Directory: resets, unlocks, onboarding, and offboarding.
+- The day-to-day tasks a helpdesk technician handles in Active Directory: password resets, unlocks, onboarding, and offboarding.
 - How DNS has to be configured correctly on a client before it can find and join a domain.
 - How Group Policy pushes settings to clients without touching each machine manually.
