@@ -72,10 +72,10 @@ Assigned a Microsoft 365 Business Premium license to Tony Stark.
 ![Outlook error with no license](images/22-outlook-error-no-license.png)
 ![License reassigned](images/23-license-reassigned.png)
 
-Without the license, Tony lost access to Exchange (email), Teams, OneDrive, and Office apps. Reassigning the license restored access.
+With the license removed, Tony got an error in Outlook and could no longer open his mailbox, which shows how a missing license shows up as an access problem for the user.
 
 ### Scenario 6: Offboarding
-- **Problem:** Employee needs their account access revoked immediately.
+- **Problem:** Employee needs their account access revoked.
 - **Resolution:** Blocked Tony's sign-in and confirmed he could no longer log in.
 
 ![Block sign-in toggle](images/24-block-signin-toggle.png)
@@ -84,6 +84,9 @@ Without the license, Tony lost access to Exchange (email), Teams, OneDrive, and 
 
 ## What I Learned
 - Microsoft 365 organizes users by Department and Groups instead of OUs like Active Directory.
-- How licenses control access to core services (Exchange, Teams, OneDrive, Office apps) and what happens when one is removed.
+- How to reset a user's password from the admin center.
 - The full MFA re-registration flow, from both the admin side and the end-user side.
-- How blocking sign-in immediately affects a user's access without deleting their data.
+- How to create a shared mailbox, add members to it, and confirm they can open it in Outlook.
+- How to create private Teams/Microsoft 365 groups for each department.
+- How licenses control access to Microsoft 365 services: removing Tony's license caused an Outlook error until the license was reassigned.
+- How blocking sign-in stops a user from logging in without deleting their account.
