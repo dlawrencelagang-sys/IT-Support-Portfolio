@@ -61,6 +61,6 @@ Tracked both deployments in Automation History while they ran, then confirmed th
 ![Reboot prompt with custom maintenance message on the DC](images/18-reboot-confirmation.png)
 
 ## What I Learned
-- How to install the Action1 agent manually and how to use the Deployer Agent to roll it out automatically across a domain.
+- How to install the Action1 agent manually and how to use the Agent Deployer to roll it out automatically across a domain.
 - How to view the vulnerabilities (CVEs) Action1 detects on each endpoint and see which software is affected.
 - How to select missing updates, set reboot behavior with a custom user message, schedule the deployment, and monitor it in Automation History.
