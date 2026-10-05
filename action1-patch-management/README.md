@@ -1,7 +1,7 @@
 # Action1 Patch Management Lab
 
 ## Objective
-Set up Action1 in a home lab to practice patch management: installing agents, deploying agents across a domain, reviewing vulnerabilities (CVEs), and deploying missing updates with a controlled reboot.
+Set up Action1 in a home lab to practice patch management: installing agents, deploying agents across a domain, viewing vulnerabilities (CVEs), and deploying missing updates with a controlled reboot.
 
 ## Environment
 - Action1 (free tier)
@@ -33,7 +33,7 @@ I did not install anything by hand on the Windows 11 client. Once the Deployer w
 ## Scenarios Practiced
 
 ### Vulnerability review
-Reviewed the CVEs Action1 found on each endpoint, including CVSS score, whether the CVE is on the CISA KEV list, published date, remediation status, and the vulnerable software.
+Viewed the vulnerabilities (CVEs) Action1 detected on each endpoint, along with the affected software and remediation status.
 
 ![Vulnerabilities - Desktop-01](images/09-vulnerabilities-client.png)
 ![Vulnerabilities - DL-DC-01](images/10-vulnerabilities-dc.png)
@@ -62,5 +62,5 @@ Tracked both deployments in Automation History while they ran, then confirmed th
 
 ## What I Learned
 - How to install the Action1 agent manually and how to use the Deployer to roll it out automatically across a domain.
-- How to review vulnerabilities per endpoint and read CVSS scores and CISA KEV flags.
+- How to view the vulnerabilities (CVEs) Action1 detects on each endpoint and see which software is affected.
 - How to select missing updates, set reboot behavior with a custom user message, schedule the deployment, and monitor it in Automation History.
